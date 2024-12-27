@@ -10,13 +10,6 @@ console.log(datajson)
 const Home = () => {
     const [filteredCards, setFilteredCards] = useState(datajson);
 
-    // const handleSearch = (searchValue) => {
-    //     const filtered = datajson.filter((card) =>
-    //         card.name.toLowerCase().includes(searchValue.toLowerCase())
-    //     );
-    //     setFilteredCards(filtered);
-    // };
-
     const handleSearch = (searchValue) => {
         const filtered = datajson.filter((card) => {
             const values = Object.values(card).map(value => value.toString().toLowerCase());
