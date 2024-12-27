@@ -1,11 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';  // For SearchInput.jsx
-
 export const SearchInput= ({onSearch})=>
 {
     return(
         <div className="search-wrapper">
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
+            <i className="fa-regular fa-magnifying-glass search-icon"></i>
             <input
                 type="text"
                 className="search-input"
