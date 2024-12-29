@@ -5,7 +5,6 @@ import { Filters } from "../components/Filters";
 import { CountriesGrid } from "../components/CountriesGrid";
 import { useState } from "react";
 
-console.log(datajson)
 
 const Home = () => {
     const [filteredCards, setFilteredCards] = useState(datajson);

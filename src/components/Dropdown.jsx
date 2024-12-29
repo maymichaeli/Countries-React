@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { REGIONS } from "../constants/regions.js";
 
 export const Dropdown = ({onFilter}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ export const Dropdown = ({onFilter}) => {
     };
 
     return (
-        <div className={`dropdown-wrapper ${isOpen ? "open" : ""}`}>
+        <div className={`dropdown-wrapper ${isOpen && "open"}`}>
             <div
                 className="dropdown-header flex flex-jc-sb flex-ai-c"
                 onClick={() => setIsOpen(!isOpen)}
@@ -20,13 +21,18 @@ export const Dropdown = ({onFilter}) => {
             {isOpen && (
                 <div className="dropdown-body">
                     <ul>
-                        {["All", "Africa", "Americas", "Asia", "Europe", "Oceania"].map(
+                        {REGIONS.map((region) => (
+                            <li key={region} onClick={() => handleFilter(region.toLowerCase())}>
+                                {region}
+                            </li>
+                        ))}
+                        {/* {["All", "Africa", "Americas", "Asia", "Europe", "Oceania"].map(
                             (region) => (
                                 <li key={region} onClick={() => handleFilter(region.toLowerCase())}>
                                     {region}
                                 </li>
                             )
-                        )}
+                        )} */}
                     </ul>
                 </div>
             )}

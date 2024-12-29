@@ -7,7 +7,7 @@ export const Header = () => {
         setIsDarkMode(!isDarkMode);
 
         if (!isDarkMode) {
-            document.body.classList.add("dark-theme");
+            document.body.classList.add("dark-theme",!isDarkMode);
         } else {
             document.body.classList.remove("dark-theme");
         }
